@@ -30,12 +30,13 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/background.jpg'),
+            image: AssetImage("assets/greenback.jpeg"),
             fit: BoxFit.cover,
           ),
         ),
         child: SafeArea(
-          child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
               children: [
                 Container(
@@ -129,18 +130,24 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                           ),
                           const SizedBox(height: 16),
-                          Row(
+                          Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
-                              Checkbox(
-                                value: _rememberMe,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _rememberMe = value ?? false;
-                                  });
-                                },
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Checkbox(
+                                    value: _rememberMe,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _rememberMe = value ?? false;
+                                      });
+                                    },
+                                  ),
+                                  const Text('Remember Me'),
+                                ],
                               ),
-                              const Text('Remember Me'),
-                              const Spacer(),
                               TextButton(
                                 onPressed: () {
                                   // TODO: Implement forgot password
@@ -149,7 +156,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 24),
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
@@ -173,7 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: const Text('Log in'),
                             ),
                           ),
-                          const SizedBox(height: 24),
+                          const SizedBox(height: 30),
                         ],
                       ),
                     ),

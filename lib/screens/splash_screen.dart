@@ -12,8 +12,7 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-                'https://i.pinimg.com/736x/68/58/26/6858261634eb434de6ad3bea6d92907f.jpg'),
+            image: AssetImage("assets/greenback.jpeg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -34,7 +33,7 @@ class SplashScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 SizedBox(
-                  width: double.infinity,
+                  width: 230,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pushReplacement(
@@ -73,7 +72,6 @@ class SplashScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
-                     
                     ),
                   ),
                 ),
