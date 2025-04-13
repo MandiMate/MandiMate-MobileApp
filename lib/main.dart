@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
-
+import 'package:http/http.dart' as http;
 void main() {
   runApp(const MyApp());
 }
@@ -31,3 +31,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
